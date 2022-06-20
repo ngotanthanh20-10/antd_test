@@ -5,6 +5,7 @@ const StaticHeader = () => {
   return (
     <div
       style={{
+        width: "1200px",
         padding: "0px 10px",
       }}
     >

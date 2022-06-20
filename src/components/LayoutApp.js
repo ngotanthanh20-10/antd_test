@@ -4,10 +4,9 @@ import { Layout } from "antd";
 import HeaderApp from "./HeaderApp";
 import SiderApp from "./SiderApp";
 import HeaderComplaintList from "./HeaderComplaintList";
-import ContentComplainList from "./ContentComplainList";
 import SiderLeft from "./SiderLeft";
-import StaticHeader from "./StaticHeader";
 import { Col, Row } from "antd";
+import Complaint from "./Complaint";
 
 const LayoutApp = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -27,20 +26,13 @@ const LayoutApp = () => {
           </div>
           <Layout>
             <Row>
-              <Col flex="auto" style={{ transition: "30s" }}>
+              <Col flex="auto">
                 <Layout>
-                  <div
-                    style={{
-                      width: "1200px",
-                    }}
-                  >
-                    <StaticHeader />
-                  </div>
-                  <ContentComplainList />
+                  <Complaint />
                 </Layout>
               </Col>
               {!leftContent && (
-                <Col flex="2">
+                <Col flex="500px">
                   <SiderLeft
                     leftContent={leftContent}
                     setLeftContent={setLeftContent}

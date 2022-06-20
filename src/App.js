@@ -1,10 +1,12 @@
 import LayoutApp from "./components/LayoutApp";
-// import Test from "./components/Test";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
+// import Complaint from "./components/Complaint";
 function App() {
   return (
     <>
       <LayoutApp />
+      {/* <Test /> */}
+      {/* <Complaint /> */}
     </>
   );
 }

@@ -9,7 +9,7 @@ import {
   DatabaseOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import GrabIcon from "../img/grab.png";
+import logo from "../img/logo.png";
 const { Sider } = Layout;
 
 const SiderApp = ({ collapsed }) => {
@@ -22,12 +22,13 @@ const SiderApp = ({ collapsed }) => {
     >
       <div className="logo">
         <img
-          src={GrabIcon}
-          style={
-            collapsed
-              ? { height: "60%", transition: ".3s" }
-              : { height: "100%", transition: ".3s" }
-          }
+          src={logo}
+          style={{
+            height: "66px",
+            transition: ".3s",
+            border: "1px solid white",
+          }}
+          alt=""
         />
       </div>
       <Menu
@@ -37,32 +38,32 @@ const SiderApp = ({ collapsed }) => {
         items={[
           {
             key: "1",
-            icon: <FrownOutlined />,
+            icon: <FrownOutlined style={{ fontSize: "20px" }} />,
             label: "Complaint",
           },
           {
             key: "2",
-            icon: <CommentOutlined />,
+            icon: <CommentOutlined style={{ fontSize: "20px" }} />,
             label: "CRL",
           },
           {
             key: "3",
-            icon: <BlockOutlined />,
+            icon: <BlockOutlined style={{ fontSize: "20px" }} />,
             label: "Product",
           },
           {
             key: "4",
-            icon: <TeamOutlined />,
+            icon: <TeamOutlined style={{ fontSize: "20px" }} />,
             label: "BSC Account",
           },
           {
             key: "5",
-            icon: <DatabaseOutlined />,
+            icon: <DatabaseOutlined style={{ fontSize: "20px" }} />,
             label: "OEM Supplier",
           },
           {
             key: "6",
-            icon: <UserOutlined />,
+            icon: <UserOutlined style={{ fontSize: "20px" }} />,
             label: "OEM User",
           },
         ]}

@@ -12,7 +12,10 @@ const Test = () => {
           <Layout>
             <Header style={{ backgroundColor: "orange" }}>Header</Header>
             <Layout>
-              <Content>Content</Content>
+              <Layout>
+                <Header style={{ backgroundColor: "gray" }}>Header</Header>
+                <Content>Content</Content>
+              </Layout>
               <Sider style={{ backgroundColor: "red" }}>Sider</Sider>
             </Layout>
           </Layout>
