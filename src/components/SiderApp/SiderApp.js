@@ -1,6 +1,6 @@
 import React from "react";
-import "./LayoutApp.css";
-import { Layout, Menu } from "antd";
+import "./SiderApp.css";
+import { Image, Layout, Menu } from "antd";
 import {
   FrownOutlined,
   CommentOutlined,
@@ -9,7 +9,7 @@ import {
   DatabaseOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import logo from "../img/logo.png";
+import logo from "../../img/logo.png";
 const { Sider } = Layout;
 
 const SiderApp = ({ collapsed }) => {
@@ -18,18 +18,10 @@ const SiderApp = ({ collapsed }) => {
       trigger={null}
       collapsible
       collapsed={collapsed}
-      style={{ minHeight: "100vh" }}
+      className="siderAppContainer"
     >
       <div className="logo">
-        <img
-          src={logo}
-          style={{
-            height: "66px",
-            transition: ".3s",
-            border: "1px solid white",
-          }}
-          alt=""
-        />
+        <Image className="image" src={logo} alt="" />
       </div>
       <Menu
         theme="dark"
@@ -38,32 +30,32 @@ const SiderApp = ({ collapsed }) => {
         items={[
           {
             key: "1",
-            icon: <FrownOutlined style={{ fontSize: "20px" }} />,
+            icon: <FrownOutlined className="sizeIconSider" />,
             label: "Complaint",
           },
           {
             key: "2",
-            icon: <CommentOutlined style={{ fontSize: "20px" }} />,
+            icon: <CommentOutlined className="sizeIconSider" />,
             label: "CRL",
           },
           {
             key: "3",
-            icon: <BlockOutlined style={{ fontSize: "20px" }} />,
+            icon: <BlockOutlined className="sizeIconSider" />,
             label: "Product",
           },
           {
             key: "4",
-            icon: <TeamOutlined style={{ fontSize: "20px" }} />,
+            icon: <TeamOutlined className="sizeIconSider" />,
             label: "BSC Account",
           },
           {
             key: "5",
-            icon: <DatabaseOutlined style={{ fontSize: "20px" }} />,
+            icon: <DatabaseOutlined className="sizeIconSider" />,
             label: "OEM Supplier",
           },
           {
             key: "6",
-            icon: <UserOutlined style={{ fontSize: "20px" }} />,
+            icon: <UserOutlined className="sizeIconSider" />,
             label: "OEM User",
           },
         ]}

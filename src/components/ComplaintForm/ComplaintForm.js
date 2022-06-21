@@ -1,8 +1,8 @@
 import React from "react";
-import "./LayoutApp.css";
+import "./ComplaintForm.css";
 import { Layout, Tabs } from "antd";
-import ComplainActivity from "./ComplainActivity";
-import ComplaintDetail from "./ComplaintDetail";
+import ComplaintActivity from "./ComplaintActivity/ComplaintActivity";
+import ComplaintDetail from "./ComplaintDetail/ComplaintDetail";
 const { TabPane } = Tabs;
 const { Content } = Layout;
 
@@ -22,7 +22,7 @@ const Complaint = () => {
     >
       <Tabs defaultActiveKey="2" onChange={onChange}>
         <TabPane tab="Activity History" key="1">
-          <ComplainActivity />
+          <ComplaintActivity />
         </TabPane>
         <TabPane tab="Complaint Detail" key="2">
           <ComplaintDetail />

@@ -1,0 +1,13 @@
+.titleCollapsePanel {
+    background-color: #fff;
+    border: 1px solid gray;
+    border-bottom: 1px solid gray !important;
+    border-radius: 5px !important;
+    margin-bottom: 10px;
+}
+
+.headerPanelTitle{
+    color: #1890ff;
+    font-size: 15px;
+    font-weight: 500;
+}

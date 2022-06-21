@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row, Form, Input, Select, DatePicker } from "antd";
-import "./LayoutApp.css";
+import "./BasicInformationForm.css";
+import axios from "axios";
 
 const { Option } = Select;
+const Author =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IlFBIiwiaWF0IjoxNjU1ODA2ODgyLCJleHAiOjE2NTU4Nzg4ODJ9.akiLEQ95LXws4CuZvY2eCz6mM8IRK-hntm5Oe9Y8Dw8";
 
 const BasicInfoFrom = () => {
+  const [complaint, setComplaint] = useState([]);
+
+  useEffect(() => {
+    const loadComplaint = async () => {
+      const response = await axios.get(
+        "http://10.0.106.27:3001/api/v1/complaints/16",
+        {
+          headers: {
+            Authorization: `Bearer ${Author}`,
+          },
+        }
+      );
+      setComplaint(response.data.data);
+    };
+    loadComplaint();
+  }, []);
+
+  console.log(complaint);
   return (
     <>
       <Form layout="vertical" autoComplete="off">

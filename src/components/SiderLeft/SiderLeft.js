@@ -1,5 +1,4 @@
 import React from "react";
-import "./LayoutApp.css";
 import { Layout } from "antd";
 const { Content } = Layout;
 

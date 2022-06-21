@@ -1,25 +1,25 @@
 import React, { useState } from "react";
-import "./LayoutApp.css";
-import { Layout } from "antd";
-import HeaderApp from "./HeaderApp";
-import SiderApp from "./SiderApp";
-import HeaderComplaintList from "./HeaderComplaintList";
-import SiderLeft from "./SiderLeft";
-import { Col, Row } from "antd";
-import Complaint from "./Complaint";
+import "./Layout.css";
+import { Layout, Col, Row } from "antd";
+import HeaderApp from "../HeaderApp/HeaderApp";
+import SiderApp from "../SiderApp/SiderApp";
+import HeaderComplaint from "../HeaderComplaint/HeaderComplaint";
+import SiderLeft from "../SiderLeft/SiderLeft";
+import Complaint from "../ComplaintForm/ComplaintForm";
+import StaticHeader from "../StaticHeader/StaticHeader";
 
 const LayoutApp = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [leftContent, setLeftContent] = useState(false);
 
   return (
-    <Layout>
+    <Layout className="layoutContainer">
       <SiderApp collapsed={collapsed} />
       <Layout className="layout">
         <HeaderApp collapsed={collapsed} setCollapsed={setCollapsed} />
         <Layout>
           <div>
-            <HeaderComplaintList
+            <HeaderComplaint
               leftContent={leftContent}
               setLeftContent={setLeftContent}
             />
@@ -27,6 +27,7 @@ const LayoutApp = () => {
           <Layout>
             <Row>
               <Col flex="auto">
+                <StaticHeader />
                 <Layout>
                   <Complaint />
                 </Layout>

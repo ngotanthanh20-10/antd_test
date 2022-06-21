@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./LayoutApp.css";
 import { Layout, Menu, Button, Col, Row, Space, Dropdown, Input } from "antd";
 import {
   DownOutlined,
@@ -13,9 +12,11 @@ import {
 } from "@ant-design/icons";
 import axios from "axios";
 
+import "./HeaderComplaint.css";
+
 const { Content } = Layout;
 
-const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
+const HeaderComplaint = ({ leftContent, setLeftContent }) => {
   const [users, setUsers] = useState([]);
   const [searchTextValue, setSearchTextValue] = useState("");
 
@@ -32,14 +33,13 @@ const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
     const loadUsers = async () => {
       const response = await axios.get("http://10.0.106.27:3001/api/v1/users", {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6IlN1cGVyQWRtaW4iLCJpYXQiOjE2NTU3MTE2NjgsImV4cCI6MTY1NTc4MzY2OH0.rf09no97lq_QMUoNXwb3YMANZMhmu_QGBGlZdwMrgsA`,
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6IlN1cGVyQWRtaW4iLCJpYXQiOjE2NTU3ODcyNzksImV4cCI6MTY1NTg1OTI3OX0.neh5xk6IPeURDn7SFNgjsf5vpJjjDBR7_IOlKhW6ewY`,
         },
       });
       setUsers(response.data.data);
     };
     loadUsers();
   }, []);
-  console.log(users);
   const [filtered, setFiltered] = useState([]);
 
   const handleFilter = (e) => {
@@ -47,6 +47,7 @@ const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
     const newFilter = listInputSearch.filter((value) =>
       value.toLowerCase().includes(searchText.toLowerCase())
     );
+    console.log(users);
     if (searchText === "") {
       setFiltered([]);
     } else {
@@ -55,17 +56,9 @@ const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
     setSearchTextValue(searchText);
   };
   return (
-    <Content
-      className="background"
-      style={{
-        margin: "10px 10px 5px",
-        padding: "10px",
-        alignItems: "center",
-        borderRadius: "10px",
-      }}
-    >
-      <Row>
-        <Col xs={14} sm={10} md={8} lg={6}>
+    <Content className="headerComplaintContentBackground">
+      <Row className="row1">
+        <Col xs={10} sm={10} md={8} lg={6} className="col1_Row1">
           <Dropdown
             overlay={
               <Menu
@@ -73,19 +66,19 @@ const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
                   {
                     label: "My Complaint",
                     key: "1",
-                    icon: <FrownOutlined style={{ fontSize: "20px" }} />,
+                    icon: <FrownOutlined className="sizeIconMenu" />,
                   },
                   {
                     label: "Product Return",
                     key: "2",
-                    icon: <BlockOutlined style={{ fontSize: "20px" }} />,
+                    icon: <BlockOutlined className="sizeIconMenu" />,
                   },
                 ]}
-                style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "5px" }}
               />
             }
           >
-            <Button style={{ borderRadius: "10px" }}>
+            <Button className="buttonMyComplaint">
               <Space>
                 My Complaint
                 <DownOutlined />
@@ -93,9 +86,9 @@ const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
             </Button>
           </Dropdown>
         </Col>
-        <Col xs={10} sm={14} md={16} lg={18}>
-          <Row justify="center">
-            <Col flex="auto">
+        <Col xs={14} sm={14} md={16} lg={18} className="col2_Row1">
+          <Row justify="center" className="row2">
+            <Col flex="auto" className="col1_Row2">
               <Input
                 size="middle"
                 placeholder={`Search${listInputSearch}`}
@@ -108,32 +101,18 @@ const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
                     }}
                   />
                 }
-                style={{ borderRadius: "10px" }}
+                className="inputAutoComplete"
                 onChange={handleFilter}
                 value={searchTextValue}
               />
               {filtered.length !== 0 && (
-                <div
-                  style={{
-                    marginTop: "10px",
-                    width: "100%",
-                    borderRadius: "10px",
-                    border: "1px solid gray",
-                    padding: "10px",
-                    zIndex: "1",
-                    backgroundColor: "white",
-                    position: "absolute",
-                  }}
-                >
+                <div className="resultsAutoComplete">
                   {filtered.map((value, key) => (
                     <Button
+                      type="link"
                       block
                       key={key}
-                      style={{
-                        width: "100%",
-                        cursor: "pointer",
-                        margin: "2px 0px",
-                      }}
+                      className="buttonResultsAutoComplete"
                       onClick={() => {
                         setSearchTextValue(value);
                         setFiltered([]);
@@ -146,27 +125,17 @@ const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
               )}
             </Col>
 
-            <Col
-              flex="200px"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
+            <Col className="col2_Row2" flex="200px">
               <Button
                 type="primary"
                 icon={<ExportOutlined />}
                 size="middle"
-                style={{
-                  borderRadius: "5px",
-                  marginRight: "10px",
-                  marginLeft: "10px",
-                }}
+                className="buttonRightHeader"
               />
               <Button
                 type="primary"
                 size="middle"
-                style={{ borderRadius: "5px", marginRight: "10px" }}
+                className="buttonRightHeader"
               >
                 Copy Complaint
               </Button>
@@ -176,8 +145,8 @@ const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
                   leftContent ? <LeftSquareOutlined /> : <RightSquareOutlined />
                 }
                 size="middle"
+                className="buttonRightHeader"
                 onClick={() => setLeftContent(!leftContent)}
-                style={{ borderRadius: "5px", marginRight: "10px" }}
               />
             </Col>
           </Row>
@@ -187,4 +156,4 @@ const HeaderComplaintList = ({ leftContent, setLeftContent }) => {
   );
 };
 
-export default HeaderComplaintList;
+export default HeaderComplaint;

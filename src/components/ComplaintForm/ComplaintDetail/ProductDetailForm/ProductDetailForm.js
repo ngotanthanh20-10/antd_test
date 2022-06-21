@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, Form, Input, Select } from "antd";
-import "./LayoutApp.css";
+import "./ProductDetailForm.css";
+
 const { Option } = Select;
 
 const ProductDetailFrom = () => {

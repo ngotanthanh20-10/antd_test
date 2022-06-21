@@ -7,15 +7,20 @@ const Test = () => {
     <>
       <Layout>
         <Sider style={{ backgroundColor: "pink" }}>Sider</Sider>
+
         <Layout>
           <Header style={{ backgroundColor: "blue" }}>Header</Header>
+
           <Layout>
             <Header style={{ backgroundColor: "orange" }}>Header</Header>
+
             <Layout>
               <Layout>
                 <Header style={{ backgroundColor: "gray" }}>Header</Header>
-                <Content>Content</Content>
+
+                <Content style={{ height: "100px" }}>Content</Content>
               </Layout>
+
               <Sider style={{ backgroundColor: "red" }}>Sider</Sider>
             </Layout>
           </Layout>

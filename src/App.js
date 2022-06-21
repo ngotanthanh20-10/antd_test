@@ -1,10 +1,11 @@
-import LayoutApp from "./components/LayoutApp";
+import Layout from "./components/Layout/Layout";
 import "antd/dist/antd.min.css";
+// import Test from "./components/Test";
 // import Complaint from "./components/Complaint";
 function App() {
   return (
     <>
-      <LayoutApp />
+      <Layout />
       {/* <Test /> */}
       {/* <Complaint /> */}
     </>

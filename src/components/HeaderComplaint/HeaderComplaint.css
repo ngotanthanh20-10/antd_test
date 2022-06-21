@@ -1,0 +1,63 @@
+.headerComplaintContentBackground {
+    background-color: white;
+    margin: 10px 10px 5px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 5px ;
+}
+
+.sizeIconMenu {
+    font-size: 20px !important;
+}
+
+.buttonMyComplaint {
+    border-radius: 5px !important;
+}
+
+.inputAutoComplete {
+    border-radius: 5px !important;
+}
+
+.resultsAutoComplete {
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 5px !important;
+    padding: 10px;
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+}
+
+.buttonResultsAutoComplete {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px !important;
+    border-bottom: 1px solid gray !important;
+    margin-bottom: 5px;
+}
+
+.col2_Row2 {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonRightHeader {
+    border-radius: 5px !important;
+    /* margin-right: 10px; */
+    margin-left: 10px;
+}
+
+/* Tab and ipad */
+@media only screen and (min-width: 50em) and (max-width: 64em) {
+}
+
+/* mobile */
+@media only screen and (max-width: 50em) {
+    .col2_Row2 {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+}
