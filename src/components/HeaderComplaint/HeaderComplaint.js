@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Layout, Menu, Button, Col, Row, Space, Dropdown, Input } from "antd";
 import {
   DownOutlined,
@@ -10,14 +10,14 @@ import {
   BlockOutlined,
   CloseCircleOutlined,
 } from "@ant-design/icons";
-import axios from "axios";
+// import axios from "axios";
 
 import "./HeaderComplaint.css";
 
 const { Content } = Layout;
 
 const HeaderComplaint = ({ leftContent, setLeftContent }) => {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
   const [searchTextValue, setSearchTextValue] = useState("");
 
   const listInputSearch = [
@@ -29,17 +29,17 @@ const HeaderComplaint = ({ leftContent, setLeftContent }) => {
     " UPN",
   ];
 
-  useEffect(() => {
-    const loadUsers = async () => {
-      const response = await axios.get("http://10.0.106.27:3001/api/v1/users", {
-        headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6IlN1cGVyQWRtaW4iLCJpYXQiOjE2NTU3ODcyNzksImV4cCI6MTY1NTg1OTI3OX0.neh5xk6IPeURDn7SFNgjsf5vpJjjDBR7_IOlKhW6ewY`,
-        },
-      });
-      setUsers(response.data.data);
-    };
-    loadUsers();
-  }, []);
+  // useEffect(() => {
+  //   const loadUsers = async () => {
+  //     const response = await axios.get("http://10.0.106.27:3001/api/v1/users", {
+  //       headers: {
+  //         Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6IlN1cGVyQWRtaW4iLCJpYXQiOjE2NTU3ODcyNzksImV4cCI6MTY1NTg1OTI3OX0.neh5xk6IPeURDn7SFNgjsf5vpJjjDBR7_IOlKhW6ewY`,
+  //       },
+  //     });
+  //     setUsers(response.data.data);
+  //   };
+  //   loadUsers();
+  // }, []);
   const [filtered, setFiltered] = useState([]);
 
   const handleFilter = (e) => {
@@ -47,7 +47,7 @@ const HeaderComplaint = ({ leftContent, setLeftContent }) => {
     const newFilter = listInputSearch.filter((value) =>
       value.toLowerCase().includes(searchText.toLowerCase())
     );
-    console.log(users);
+    // console.log(users);
     if (searchText === "") {
       setFiltered([]);
     } else {

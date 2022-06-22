@@ -5,7 +5,7 @@ import HeaderApp from "../HeaderApp/HeaderApp";
 import SiderApp from "../SiderApp/SiderApp";
 import HeaderComplaint from "../HeaderComplaint/HeaderComplaint";
 import SiderLeft from "../SiderLeft/SiderLeft";
-import Complaint from "../ComplaintForm/ComplaintForm";
+import ComplaintForm from "../ComplaintForm/ComplaintForm";
 import StaticHeader from "../StaticHeader/StaticHeader";
 
 const LayoutApp = () => {
@@ -29,7 +29,7 @@ const LayoutApp = () => {
               <Col flex="auto">
                 <StaticHeader />
                 <Layout>
-                  <Complaint />
+                  <ComplaintForm />
                 </Layout>
               </Col>
               {!leftContent && (

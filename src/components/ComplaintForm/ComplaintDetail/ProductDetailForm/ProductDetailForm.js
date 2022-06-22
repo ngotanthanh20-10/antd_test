@@ -4,10 +4,10 @@ import "./ProductDetailForm.css";
 
 const { Option } = Select;
 
-const ProductDetailFrom = () => {
+const ProductDetailFrom = ({ complaint }) => {
   return (
     <>
-      <Form layout="vertical" autoComplete="off">
+      <Form layout="vertical" autoComplete="off" initialValues={complaint}>
         <div
           style={{
             backgroundColor: "Azure",
@@ -31,11 +31,7 @@ const ProductDetailFrom = () => {
             <Col xs={24} sm={24} md={24} lg={24}>
               <div className="formInputBasicInfo">
                 Search product by Name, UPN, Model, Catalog ...
-                <Select
-                  defaultValue="default"
-                  style={{ width: "100%" }}
-                  value={"bstar"}
-                >
+                <Select defaultValue={""} style={{ width: "100%" }}>
                   <Option value="bstar">bstar</Option>
                 </Select>
               </div>

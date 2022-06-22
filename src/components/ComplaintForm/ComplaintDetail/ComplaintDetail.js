@@ -9,7 +9,7 @@ import EventDetailForm from "./EventDetailForm/EventDetailForm";
 
 const { Panel } = Collapse;
 
-const ComplaintDetail = () => {
+const ComplaintDetail = ({ complaint }) => {
   const headerPanel = (title) => {
     return <span className="headerPanelTitle">{title}</span>;
   };
@@ -22,14 +22,14 @@ const ComplaintDetail = () => {
           header={headerPanel("Basic Information")}
           key="1"
         >
-          <BasicInformationForm />
+          <BasicInformationForm complaint={complaint} />
         </Panel>
         <Panel
           className="titleCollapsePanel"
           header={headerPanel("Product Detail")}
           key="2"
         >
-          <ProductDetailForm />
+          <ProductDetailForm complaint={complaint} />
         </Panel>
         <Panel
           className="titleCollapsePanel"
