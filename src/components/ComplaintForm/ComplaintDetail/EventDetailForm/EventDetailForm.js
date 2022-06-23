@@ -11,10 +11,10 @@ const EventDetailForm = ({ complaint }) => {
   return (
     <>
       <Form layout="vertical" autoComplete="off" initialValues={complaint}>
-        <EventDetail complaint={complaint} />
-        <CardiovascularCaseData complaint={complaint} />
-        <PatientInformation complaint={complaint} />
-        <OtherProductInformation complaint={complaint} />
+        <EventDetail />
+        <CardiovascularCaseData />
+        <PatientInformation />
+        <OtherProductInformation />
       </Form>
     </>
   );

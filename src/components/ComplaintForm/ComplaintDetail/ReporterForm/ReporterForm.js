@@ -10,9 +10,9 @@ const ReporterForm = ({ complaint }) => {
   return (
     <>
       <Form layout="vertical" autoComplete="off" initialValues={complaint}>
-        <FacilityInformation complaint={complaint} />
-        <InitialReporterInformation complaint={complaint} />
-        <BSCReporterInformation complaint={complaint} />
+        <FacilityInformation />
+        <InitialReporterInformation />
+        <BSCReporterInformation />
       </Form>
     </>
   );

@@ -1,40 +1,40 @@
 import React from "react";
-import { Col, Row, Input } from "antd";
+import { Col, Row, Input, Form } from "antd";
 
 import "./ReporterForm.css";
 
-const FacilityInformation = ({ complaint }) => {
+const FacilityInformation = () => {
   return (
     <div className="formProductInformation">
       <div className="titleProductInformation">Facility Information</div>
       <Row gutter={16}>
         <Col xs={24} sm={24} md={12} lg={12}>
-          <div className="formInputBasicInfo">
+          <Form.Item name="" className="formInputBasicInfo">
             Facility Name
-            <Input placeholder="Facility Name" value={""} />
-          </div>
-          <div className="formInputBasicInfo">
+            <Input placeholder="Facility Name" />
+          </Form.Item>
+          <Form.Item name="" className="formInputBasicInfo">
             Physician's Name
-            <Input placeholder="Physician's Name" value={""} />
-          </div>
-          <div className="formInputBasicInfo">
+            <Input placeholder="Physician's Name" />
+          </Form.Item>
+          <Form.Item name="" className="formInputBasicInfo">
             State/Province
-            <Input placeholder="State/Province" value={""} />
-          </div>
+            <Input placeholder="State/Province" />
+          </Form.Item>
         </Col>
         <Col xs={24} sm={24} md={12} lg={12}>
-          <div className="formInputBasicInfo">
+          <Form.Item name="" className="formInputBasicInfo">
             Physician's Department
-            <Input placeholder="Physician's Department" value={""} />
-          </div>
-          <div className="formInputBasicInfo">
+            <Input placeholder="Physician's Department" />
+          </Form.Item>
+          <Form.Item name="" className="formInputBasicInfo">
             Facility SAP Code
-            <Input placeholder="Facility SAP Code" value={""} />
-          </div>
-          <div className="formInputBasicInfo">
+            <Input placeholder="Facility SAP Code" />
+          </Form.Item>
+          <Form.Item name="" className="formInputBasicInfo">
             CRL Send To
-            <Input placeholder="CRL Send To" value={""} />
-          </div>
+            <Input placeholder="CRL Send To" />
+          </Form.Item>
         </Col>
       </Row>
     </div>

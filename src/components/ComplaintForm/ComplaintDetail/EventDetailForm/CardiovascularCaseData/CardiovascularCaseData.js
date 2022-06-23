@@ -11,17 +11,17 @@ const CardiovascularCaseData = () => {
         <Col xs={24} sm={24} md={12} lg={12}>
           <Form.Item className="formInputBasicInfo">
             Tortuous severity
-            <Input placeholder="Facility Name" value={""} />
+            <Input placeholder="Facility Name" />
           </Form.Item>
           <Form.Item className="formInputBasicInfo">
             Calcification severity
-            <Input placeholder="Facility Name" value={""} />
+            <Input placeholder="Facility Name" />
           </Form.Item>
         </Col>
         <Col xs={24} sm={24} md={12} lg={12}>
           <Form.Item className="formInputBasicInfo">
             Percentage of stenosis
-            <Input placeholder="Initial Reporter Title" value={""} />
+            <Input placeholder="Initial Reporter Title" />
           </Form.Item>
         </Col>
       </Row>
