@@ -44,8 +44,11 @@
 
 .buttonRightHeader {
     border-radius: 5px !important;
-    /* margin-right: 10px; */
     margin-left: 10px;
+}
+
+.menuDropdownInContent {
+    border-radius: 5px;
 }
 
 /* Tab and ipad */

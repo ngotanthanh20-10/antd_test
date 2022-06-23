@@ -37,23 +37,20 @@ const HeaderApp = ({ collapsed, setCollapsed }) => {
             <Col className="contentColHeaderRight">
               <CaretDownOutlined className="sizeIconMenu" />
             </Col>
-            <Col style={{ fontSize: "20px" }}>|</Col>
+            <Col className="iconSizeHeader">|</Col>
             <Col className="contentColHeaderRight">
-              <Badge style={{ width: "10px", height: "10px" }} dot={{}}>
-                <BellOutlined style={{ fontSize: "21px" }} />
+              <Badge dot={{}}>
+                <BellOutlined className="iconSizeHeader" />
               </Badge>
             </Col>
-            <Col style={{ fontSize: "20px" }}>|</Col>
+            <Col className="iconSizeHeader">|</Col>
             <Col className="contentColHeaderRight">
               <Avatar
                 src={
-                  <Image
-                    src="https://vcdn.kenhgamevn.com/wp-content/uploads/2021/04/31235039/khoanh-khac-vi-dai-cua-luffy-0-game4v.png"
-                    style={{ width: 40 }}
-                  />
+                  <Image src="https://vcdn.kenhgamevn.com/wp-content/uploads/2021/04/31235039/khoanh-khac-vi-dai-cua-luffy-0-game4v.png" />
                 }
-                icon={<UserOutlined style={{ fontSize: "20px" }} />}
-                style={{ width: "36px", height: "36px" }}
+                icon={<UserOutlined className="iconSizeHeader" />}
+                className="avatarUserAccount"
               />
             </Col>
           </Row>

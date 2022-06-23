@@ -1,0 +1,39 @@
+.formInputBasicInfo {
+    margin-bottom: 15px;
+}
+
+.formInputBasicInfo input {
+    height: 35px !important;
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.ant-select-selector {
+    margin-top: 5px;
+    height: 35px !important;
+    border-radius: 5px !important;
+}
+
+textarea.ant-input {
+    border-radius: 5px;
+}
+
+.selectInputTag {
+    width: 100%;
+}
+
+.formProductInformation {
+    background-color: azure;
+    margin-bottom: 8px;
+    border: 1px solid #d3eded;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.titleProductInformation {
+    color: #005490;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}

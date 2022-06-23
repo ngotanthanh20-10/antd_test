@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Input } from "antd";
 import { SearchOutlined, CloseCircleOutlined } from "@ant-design/icons";
 
+import "./AutoCompleteSearch.css";
+
 const AutoCompleteSearch = ({ data }) => {
   const [filtered, setFiltered] = useState([]);
   const [searchTextValue, setSearchTextValue] = useState("");
@@ -30,32 +32,17 @@ const AutoCompleteSearch = ({ data }) => {
             }}
           />
         }
-        style={{ borderRadius: "10px" }}
+        className="searchInputTag"
         onChange={handleFilter}
         value={searchTextValue}
       />
       {filtered.length !== 0 && (
-        <div
-          style={{
-            marginTop: "10px",
-            width: "100%",
-            borderRadius: "10px",
-            border: "1px solid gray",
-            padding: "10px",
-            zIndex: "1",
-            backgroundColor: "white",
-            position: "absolute",
-          }}
-        >
+        <div className="resultsSearchInput">
           {filtered.slice(0, 10).map((value, key) => (
             <Button
               block
               key={key}
-              style={{
-                width: "100%",
-                cursor: "pointer",
-                margin: "2px 0px",
-              }}
+              className="contentResultsSearchInput"
               onClick={() => {
                 setSearchTextValue(value);
                 setFiltered([]);

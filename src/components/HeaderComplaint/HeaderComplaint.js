@@ -29,17 +29,6 @@ const HeaderComplaint = ({ leftContent, setLeftContent }) => {
     " UPN",
   ];
 
-  // useEffect(() => {
-  //   const loadUsers = async () => {
-  //     const response = await axios.get("http://10.0.106.27:3001/api/v1/users", {
-  //       headers: {
-  //         Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Nywicm9sZSI6IlN1cGVyQWRtaW4iLCJpYXQiOjE2NTU3ODcyNzksImV4cCI6MTY1NTg1OTI3OX0.neh5xk6IPeURDn7SFNgjsf5vpJjjDBR7_IOlKhW6ewY`,
-  //       },
-  //     });
-  //     setUsers(response.data.data);
-  //   };
-  //   loadUsers();
-  // }, []);
   const [filtered, setFiltered] = useState([]);
 
   const handleFilter = (e) => {
@@ -74,7 +63,7 @@ const HeaderComplaint = ({ leftContent, setLeftContent }) => {
                     icon: <BlockOutlined className="sizeIconMenu" />,
                   },
                 ]}
-                style={{ borderRadius: "5px" }}
+                className="menuDropdownInContent"
               />
             }
           >

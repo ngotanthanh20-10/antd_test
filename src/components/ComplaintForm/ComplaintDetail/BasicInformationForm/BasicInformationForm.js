@@ -11,177 +11,150 @@ const BasicInfoFrom = ({ complaint }) => {
       <Form layout="vertical" autoComplete="off" initialValues={complaint}>
         <Row gutter={16}>
           <Col xs={24} sm={24} md={12} lg={12}>
-            <div className="formInputBasicInfo">
+            <Form.Item className="formInputBasicInfo">
               Complaint ID
               <Input
                 placeholder="Complaint ID"
                 value={complaint.complaint_id}
               />
-            </div>
-            <div className="formInputBasicInfo">
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
               J-POS/CIPI ID
               <Input
                 placeholder="J-POS/CIPI ID"
                 value={complaint.jpos_cipi_id}
               />
-            </div>
-            <div className="formInputBasicInfo">
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
               Related Complaint ID
               <Input
                 placeholder="Related Complaint ID"
                 value={complaint.related_complaint_id}
               />
-            </div>
-            <div className="formInputBasicInfo">
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
               OEM Reference Number
               <Input
                 placeholder="OEM Reference Number"
                 value={complaint.oem_reference_number}
               />
-            </div>
-            <div className="formInputBasicInfo">
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
               Country of Event
               <Select
-                defaultValue="default"
-                style={{ width: "100%" }}
-                value={complaint.country_of_event}
+                defaultValue={complaint.country_of_event}
+                className="selectInputTag"
               >
                 <Option value="Vietnamese">Vietnamese</Option>
                 <Option value="England">England</Option>
                 <Option value="Japan">Japan</Option>
               </Select>
-            </div>
-            <div className="formInputBasicInfo">
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
               Event Description
               <Input.TextArea
                 value={complaint.event_description}
                 rows={4}
-                style={{ marginTop: "5px" }}
+                className="textareaInputTag"
               />
-            </div>
-            <div style={{ marginBottom: "15px" }}>
+            </Form.Item>
+            <Form.Item className="dateInputTag">
               BSC Aware Date
               <DatePicker
                 placeholder="BSC Aware Date"
-                style={{
-                  width: "100%",
-                  borderRadius: "5px",
-                  height: "35px",
-                  marginTop: "5px",
-                }}
+                className="datePickerInputTag"
                 value={complaint.bsc_aware_date}
               />
-            </div>
-            <div style={{ marginBottom: "15px" }}>
+            </Form.Item>
+            <Form.Item className="dateInputTag">
               Create Date
               <DatePicker
                 placeholder="Create Date"
-                style={{
-                  width: "100%",
-                  borderRadius: "5px",
-                  height: "35px",
-                  marginTop: "5px",
-                }}
+                className="datePickerInputTag"
                 value={complaint.created_date}
               />
-            </div>
-            <div className="formInputBasicInfo">
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
               Message to QA
               <Input
                 placeholder="Message to QA"
                 value={complaint.message_to_qa}
               />
-            </div>
+            </Form.Item>
           </Col>
 
           <Col xs={24} sm={24} md={12} lg={12}>
-            <div>
-              <div className="formInputBasicInfo">
-                Business Division
-                <Input
-                  placeholder="Business Division"
-                  value={complaint.bussiness_division}
-                />
-              </div>
-              <div className="formInputBasicInfo">
-                Complaint Assign to
-                <Select
-                  defaultValue="default"
-                  style={{ width: "100%" }}
-                  value={complaint.complaint_assign_to}
-                >
-                  <Option value="QC QA">QC QA</Option>
-                  <Option value="SU">SU</Option>
-                </Select>
-              </div>
-              <div className="formInputBasicInfo">
-                Complaint Status
-                <Select
-                  defaultValue={complaint.complaint_status}
-                  style={{
-                    width: "100%",
-                  }}
-                  // value={complaint.complaint_status}
-                >
-                  <Option value="New">New</Option>
-                  <Option value="Processing">Processing</Option>
-                </Select>
-              </div>
-              <div className="formInputBasicInfo">
-                CRL Requested?
-                <Select
-                  style={{ width: "100%" }}
-                  defaultValue={complaint.crl_requested}
-                >
-                  <Option value="True">True</Option>
-                  <Option value="False">False</Option>
-                </Select>
-              </div>
-              <div className="formInputBasicInfo">
-                Product Available for Return
-                <Select
-                  defaultValue={complaint.product_available_for_return}
-                  style={{ width: "100%" }}
-                >
-                  <Option value="True">True</Option>
-                  <Option value="False">False</Option>
-                </Select>
-              </div>
-              <div className="formInputBasicInfo">
-                Reason for NO Product Return
-                <Input.TextArea
-                  rows={4}
-                  style={{ marginTop: "5px" }}
-                  value={complaint.reason_for_no_product_return}
-                />
-              </div>
-              <div style={{ marginBottom: "15px" }}>
-                Complaint Reviewed Date (Japan)
-                <DatePicker
-                  placeholder="Complaint Reviewed Date (Japan)"
-                  style={{
-                    width: "100%",
-                    borderRadius: "5px",
-                    height: "35px",
-                    marginTop: "5px",
-                  }}
-                  value={complaint.complaint_reviewed_date}
-                />
-              </div>
-              <div style={{ marginBottom: "15px" }}>
-                OEM Notification Date
-                <DatePicker
-                  placeholder="OEM Notification Date"
-                  style={{
-                    width: "100%",
-                    borderRadius: "5px",
-                    height: "35px",
-                    marginTop: "5px",
-                  }}
-                  value={complaint.oem_notification_date}
-                />
-              </div>
-            </div>
+            <Form.Item className="formInputBasicInfo">
+              Business Division
+              <Input
+                placeholder="Business Division"
+                value={complaint.bussiness_division}
+              />
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
+              Complaint Assign to
+              <Select
+                defaultValue={complaint.complaint_assign_to}
+                className="selectInputTag"
+              >
+                <Option value="QC QA">QC QA</Option>
+                <Option value="SU">SU</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
+              Complaint Status
+              <Select
+                defaultValue={complaint.complaint_status}
+                className="selectInputTag"
+              >
+                <Option value="New">New</Option>
+                <Option value="Processing">Processing</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
+              CRL Requested?
+              <Select
+                defaultValue={complaint.crl_requested}
+                className="selectInputTag"
+              >
+                <Option value="true">True</Option>
+                <Option value="false">False</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
+              Product Available for Return
+              <Select
+                defaultValue={complaint.product_available_for_return}
+                className="selectInputTag"
+              >
+                <Option value="true">True</Option>
+                <Option value="false">False</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item className="formInputBasicInfo">
+              Reason for NO Product Return
+              <Input.TextArea
+                rows={4}
+                className="textareaInputTag"
+                value={complaint.reason_for_no_product_return}
+              />
+            </Form.Item>
+            <Form.Item className="dateInputTag">
+              Complaint Reviewed Date (Japan)
+              <DatePicker
+                placeholder="Complaint Reviewed Date (Japan)"
+                className="datePickerInputTag"
+                value={complaint.complaint_reviewed_date}
+              />
+            </Form.Item>
+            <Form.Item className="dateInputTag">
+              OEM Notification Date
+              <DatePicker
+                placeholder="OEM Notification Date"
+                className="datePickerInputTag"
+                value={complaint.oem_notification_date}
+              />
+            </Form.Item>
           </Col>
         </Row>
       </Form>

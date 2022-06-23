@@ -1,6 +1,7 @@
 .headerContainer {
     height: 66px;
     background-color: white;
+    padding: 0;
 }
 
 .trigger {
@@ -8,10 +9,12 @@
     line-height: 64px;
     cursor: pointer;
     transition: color 0.3s;
+    color: #004072;
+    font-size: 20px!important;
 }
 
 .trigger:hover {
-    color: #1890ff;
+    color: #1890ff
 }
 
 .ant-layout-header {
@@ -19,7 +22,10 @@
 }
 
 .title {
-    color: #1890ff;
+    color: #004072!important;
+    size: 18px!important;
+    font-weight: 400;
+    line-height: 21.94px;
 }
 
 .col2 {
@@ -55,16 +61,15 @@
     margin-bottom: 10px;
 }
 
-/* Tab and ipad */
-@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-    .row1 {
-        min-width: 100px;
-    }
+.iconSizeHeader {
+    font-size: 20px;
 }
 
-/* mobile */
-@media only screen and (max-width: 50em) {
-    .col2 {
-        display: none;
-    }
+.avatarUserAccount {
+    width: 36px !important;
+    height: 36px !important;
+}
+
+.avatarImgUserAccount {
+    width: 40px;
 }

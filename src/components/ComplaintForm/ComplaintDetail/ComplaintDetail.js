@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Collapse } from "antd";
+import axios from "axios";
+import moment from "moment";
 
 import "./ComplaintDetail.css";
 import BasicInformationForm from "./BasicInformationForm/BasicInformationForm";
@@ -8,8 +10,58 @@ import ReporterForm from "./ReporterForm/ReporterForm";
 import EventDetailForm from "./EventDetailForm/EventDetailForm";
 
 const { Panel } = Collapse;
+const Author =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IlFBIiwiaWF0IjoxNjU1OTY4MTg2LCJleHAiOjE2NTY2ODgxODZ9.oyHY8BSG4dhLLTcW9YNxRjJwdMFNa6vGV15dRNwKDfE";
+const dateFormat = "YYYY-MM-DD";
+const complaint_id = 1;
+const product_id = 123;
 
-const ComplaintDetail = ({ complaint }) => {
+const ComplaintDetail = () => {
+  const [complaint, setComplaint] = useState({});
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const loadComplaint = async () => {
+      const response = await axios.get(
+        `http://10.0.106.27:3001/api/v1/complaints/${complaint_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${Author}`,
+          },
+        }
+      );
+      setComplaint(response.data.data);
+    };
+    loadComplaint();
+  }, []);
+
+  if (complaint) {
+    complaint.bsc_aware_date =
+      complaint.bsc_aware_date && moment(complaint.bsc_aware_date, dateFormat);
+    complaint.complaint_reviewed_date =
+      complaint.complaint_reviewed_date &&
+      moment(complaint.complaint_reviewed_date, dateFormat);
+    complaint.created_date =
+      complaint.created_date && moment(complaint.created_date, dateFormat);
+    complaint.oem_notification_date =
+      complaint.oem_notification_date &&
+      moment(complaint.oem_notification_date, dateFormat);
+  }
+
+  useEffect(() => {
+    const loadProduct = async () => {
+      const response = await axios.get(
+        `http://10.0.106.27:3001/api/v1/products/${product_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${Author}`,
+          },
+        }
+      );
+      setProduct(response.data.data);
+    };
+    loadProduct();
+  }, []);
   const headerPanel = (title) => {
     return <span className="headerPanelTitle">{title}</span>;
   };
@@ -29,21 +81,21 @@ const ComplaintDetail = ({ complaint }) => {
           header={headerPanel("Product Detail")}
           key="2"
         >
-          <ProductDetailForm complaint={complaint} />
+          <ProductDetailForm complaint={product} />
         </Panel>
         <Panel
           className="titleCollapsePanel"
           header={headerPanel("Reporter")}
           key="3"
         >
-          <ReporterForm />
+          <ReporterForm complaint={complaint} />
         </Panel>
         <Panel
           className="titleCollapsePanel"
           header={headerPanel("Event Detail")}
           key="4"
         >
-          <EventDetailForm />
+          <EventDetailForm complaint={complaint} />
         </Panel>
       </Collapse>
     </div>

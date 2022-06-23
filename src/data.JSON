@@ -1,0 +1,63 @@
+{
+    "status_code": 200,
+    "message": "Successfully!",
+    "data": [
+      {
+        "complaint_id": 1,
+        "bussiness_division": "string",
+        "jpos_cipi_id": "string",
+        "complaint_status": "New",
+        "country_of_event": "Japan",
+        "created_date": "2022-06-23T06:24:26.186Z",
+        "product_id": {
+          "product_id": 123,
+          "product_name": "Seldinger PEG T 24Fr (8.0mm) x 5.0cm",
+          "product_name_jp": "エンドビブ セルジンガーPEGキット/コテイ",
+          "model_number": null,
+          "catalog_number": "2034",
+          "upn": "M00520340",
+          "batch": null,
+          "lot": null,
+          "branch_name": "エンドビブ　セルジンガーPEGキット",
+          "product_family": null,
+          "division": "DIVISION_ENDO",
+          "serial_number": null,
+          "upn_branch_number": "0",
+          "product_number": "M00520340",
+          "sale_status_1": "MAN",
+          "sale_status_2": "0",
+          "approval_number": "21600BZZ00253A01",
+          "ean_code": "4987578122234",
+          "sap_item_text": "エンドビブ セルジンガーPEGキット/コテイ",
+          "standard": "24Fr×5.0cm",
+          "jmdn_code": "38565003",
+          "generic_name": "長期的使用胃瘻用ボタン",
+          "old_general_name_code": "－",
+          "old_general_name": "0",
+          "ghft_classification": "高度管理医療機器（クラスⅢ）",
+          "machine_classification": "0",
+          "insurance_coverage_category": "単回使用医療機器",
+          "insurance_coverage_date": -22090752,
+          "bsj_function_classification": "0",
+          "internal_identification": "0",
+          "special_note": "CMP:90829209",
+          "medical_device_classification": "その他",
+          "oem_contact_required": true,
+          "oem": "OCS",
+          "gcs_registration_required": "不要",
+          "cis_designation_upn": "0",
+          "created_at": 1633145847,
+          "updated_at": 1633145847,
+          "deleted_flg": null
+        },
+        "complaint_assign_to": {
+          "id": 7,
+          "username": "user2",
+          "name": "User Two",
+          "email": "user2@gmail.com",
+          "role": "Super Admin",
+          "isAvailable": true
+        }
+      }
+    ]
+  }

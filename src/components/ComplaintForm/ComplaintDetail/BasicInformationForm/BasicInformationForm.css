@@ -1,13 +1,13 @@
-.formInputBasicInfo {
+/* .formInputBasicInfo {
     margin-bottom: 15px;
-}
+} */
 
-.formInputBasicInfo input {
+/* .formInputBasicInfo input {
     height: 35px !important;
     margin-top: 5px;
     border-radius: 5px;
     width: 100%;
-}
+} */
 
 .ant-select-selector {
     margin-top: 5px;
@@ -17,4 +17,23 @@
 
 textarea.ant-input {
     border-radius: 5px;
+}
+
+.selectInputTag {
+    width: 100%;
+}
+
+.textareaInputTag {
+    margin-top: 5px !important;
+}
+
+.dateInputTag {
+    margin-bottom: 15px;
+}
+
+.datePickerInputTag {
+    width: 100%;
+    border-radius: 5px;
+    height: 35px;
+    margin-top: 5px !important;
 }
