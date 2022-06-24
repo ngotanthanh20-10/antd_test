@@ -13,7 +13,6 @@ const EventDetail = () => {
         <Col xs={24} sm={24} md={12} lg={12}>
           <EventDetailLeft />
         </Col>
-
         <Col xs={24} sm={24} md={12} lg={12}>
           <EventDetailRight />
         </Col>

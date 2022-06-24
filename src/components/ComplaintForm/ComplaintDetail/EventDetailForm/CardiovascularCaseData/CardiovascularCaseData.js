@@ -9,7 +9,7 @@ const CardiovascularCaseData = () => {
       <div className="titleProductInformation">Cardiovascular case data</div>
       <Row gutter={16}>
         <Col xs={24} sm={24} md={12} lg={12}>
-          <Form.Item className="formInputBasicInfo">
+          <Form.Item name="facility_name" className="formInputBasicInfo">
             Tortuous severity
             <Input placeholder="Facility Name" />
           </Form.Item>

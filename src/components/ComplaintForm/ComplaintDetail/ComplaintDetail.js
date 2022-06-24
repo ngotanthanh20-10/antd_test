@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Collapse } from "antd";
 import axios from "axios";
-import moment from "moment";
 
 import "./ComplaintDetail.css";
 import BasicInformationForm from "./BasicInformationForm/BasicInformationForm";
@@ -12,7 +11,7 @@ import EventDetailForm from "./EventDetailForm/EventDetailForm";
 const { Panel } = Collapse;
 const Author =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Niwicm9sZSI6IlFBIiwiaWF0IjoxNjU1OTY4MTg2LCJleHAiOjE2NTY2ODgxODZ9.oyHY8BSG4dhLLTcW9YNxRjJwdMFNa6vGV15dRNwKDfE";
-const dateFormat = "YYYY-MM-DD";
+
 const complaint_id = 1;
 const product_id = 123;
 
@@ -34,19 +33,6 @@ const ComplaintDetail = () => {
     };
     loadComplaint();
   }, []);
-
-  if (complaint) {
-    complaint.bsc_aware_date =
-      complaint.bsc_aware_date && moment(complaint.bsc_aware_date, dateFormat);
-    complaint.complaint_reviewed_date =
-      complaint.complaint_reviewed_date &&
-      moment(complaint.complaint_reviewed_date, dateFormat);
-    complaint.created_date =
-      complaint.created_date && moment(complaint.created_date, dateFormat);
-    complaint.oem_notification_date =
-      complaint.oem_notification_date &&
-      moment(complaint.oem_notification_date, dateFormat);
-  }
 
   useEffect(() => {
     const loadProduct = async () => {

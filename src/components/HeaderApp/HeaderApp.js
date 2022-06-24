@@ -1,6 +1,16 @@
 import React from "react";
 import "./HeaderApp.css";
-import { Layout, Button, Col, Row, Avatar, Badge, Image } from "antd";
+import {
+  Layout,
+  Button,
+  Col,
+  Row,
+  Avatar,
+  Badge,
+  Image,
+  Dropdown,
+  Menu,
+} from "antd";
 import {
   AlignLeftOutlined,
   AlignRightOutlined,
@@ -9,10 +19,34 @@ import {
   GlobalOutlined,
   CaretDownOutlined,
 } from "@ant-design/icons";
+import { useState } from "react";
 
 const { Header } = Layout;
 
 const HeaderApp = ({ collapsed, setCollapsed }) => {
+  const [keyLanguage, setKeyLanguage] = useState("1");
+
+  const menu = (
+    <Menu
+      onClick={(e) => {
+        setKeyLanguage(e.key);
+      }}
+      items={[
+        {
+          label: "English",
+          key: "1",
+          icon: <GlobalOutlined className="iconInMenuLanguageName" />,
+        },
+        {
+          label: "Japan",
+          key: "2",
+          icon: <GlobalOutlined className="iconInMenuLanguageName" />,
+        },
+      ]}
+      className="menuDropdownInContent"
+    />
+  );
+
   return (
     <Header className="headerContainer">
       <Row className="row">
@@ -30,13 +64,15 @@ const HeaderApp = ({ collapsed, setCollapsed }) => {
         </Col>
         <Col className="col2" flex={"auto"}>
           <Row className="row1" gutter={15}>
-            <Col className="contentColHeaderRight">
-              <GlobalOutlined className="sizeIconGlobal" />
-            </Col>
-            <Col className="contentColHeaderRight thanhngo">English</Col>
-            <Col className="contentColHeaderRight">
-              <CaretDownOutlined className="sizeIconMenu" />
-            </Col>
+            <Dropdown overlay={menu}>
+              <Col className="contentColHeaderRight">
+                <GlobalOutlined className="iconLanguageName" />
+                <span className="textLanguageName">
+                  {keyLanguage === "1" ? "English" : "Japan"}
+                </span>
+                <CaretDownOutlined className="iconMenuLanguageName" />
+              </Col>
+            </Dropdown>
             <Col className="iconSizeHeader">|</Col>
             <Col className="contentColHeaderRight">
               <Badge dot={{}}>

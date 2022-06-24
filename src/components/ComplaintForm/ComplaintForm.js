@@ -1,9 +1,10 @@
 import React from "react";
 import "./ComplaintForm.css";
-import { Layout, Tabs, Button } from "antd";
+import { Layout, Tabs } from "antd";
 
 import ComplaintActivity from "./ComplaintActivity/ComplaintActivity";
 import ComplaintDetail from "./ComplaintDetail/ComplaintDetail";
+import HeaderComplaintForm from "./HeaderComplaintForm/HeaderComplaintForm";
 
 const { TabPane } = Tabs;
 const { Content } = Layout;
@@ -21,7 +22,7 @@ const ComplaintForm = () => {
       <Tabs
         defaultActiveKey="2"
         onChange={onChange}
-        tabBarExtraContent={<Button type="primary">Product Return</Button>}
+        tabBarExtraContent={<HeaderComplaintForm />}
       >
         <TabPane tab={titleTab("Activity History")} key="1">
           <ComplaintActivity />
